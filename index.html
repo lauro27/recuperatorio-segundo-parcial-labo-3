@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/persona.js"></script>
+    <title>Recuperatorio Segundo Parcial - Lamas 3°C</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <!--ABM HEADER-->
+        <div class="abmHeader">
+            <h3>ABM Personas</h3>
+            <hr>
+            <div id="form">
+                <label for="txtId">Id: </label>
+                <input type="text" name="txtId" id="txtId" class="menuInput" disabled="disabled"><br><br>
+                
+                <label for="txtNombre">Nombre: </label>
+                <input type="text" name="txtNombre" id="txtNombre" class="menuInput"><br><br>
+                
+                <label for="txtApellido">Apellido: </label>
+                <input type="text" name="txtApellido" id="txtApellido" class="menuInput"><br><br>
+                
+                <label for="numEdad">Edad: </label>
+                <input type="number" name="numEdad" id="numEdad" class="menuInput"><br><br>
+                
+                <label for="sexoSelect">Sexo: </label>
+                <select name="sexoSelect" id="sexoSelect" class="menuInput">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otros">Otros</option>
+                </select><br><br>
+                <input type="button" value="Agregar" class="btn" id="btnConfirmar" onclick="personas.agregar();">
+                <input type="button" value="Eliminar" class="btn" id="btnCancelar" onclick="personas.eliminarDeTabla();">
+                <input type="button" value="Limpiar LocalStorage" class="btn" id="btnErase" onclick="personas.rehacerTabla([]);">
+            </div>
+        </div>
+        <hr>
+        <!--FILTROS-->
+        <h3>Filtros</h3>
+        <div class="filtrosHeader">
+            
+            <div id="filtros">
+                <label for="filtroSexo">Filtrar por: </label>
+                <select name="filtroSexo" id="filtroSexo">
+                    <option value="todos" id="todos" selected="selected">Todos</option>
+                    <option value="masculino" id="masculino">Masculino</option>
+                    <option value="femenino" id="femenino">Femenino</option>
+                    <option value="otros" id="otros">Otros</option>
+                </select>
+            </div>
+            
+            <div id="promedio">
+                Promedio de precios: <input type="text" id="txtPromedio" disabled><br>
+            </div>
+            <div id="promediobutton">
+                <input type="button" value="Calcular promedio" class="btn" id="btnPromedio" onclick="vehiculos.calcularPromedio();">
+            </div>
+        </div>
+        <hr>
+        <h2>Campos mostrados:</h2>
+        <hr>
+        <div id="selectorColumna">
+            <label for="idCheck">ID</label>
+            <input type="checkbox" id="idCheck" checked>
+            <label for="NombreCheck">Nombre</label>
+            <input type="checkbox" id="NombreCheck" checked>
+            <label for="ApellidoCheck">Apellido</label>
+            <input type="checkbox" id="ApellidoCheck" checked>
+            <label for="EdadCheck">Edad</label>
+            <input type="checkbox" id="EdadCheck" checked>
+            <label for="SexoCheck">Sexo</label>
+            <input type="checkbox" id="SexoCheck" checked>
+        </div>
+        
+        <table id="tabla">
+            <col class="col1"/>
+            <col class="col2"/>
+            <col class="col3"/>
+            <col class="col4"/>
+            <col class="col5"/>
+            <col class="col6"/>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Sexo</th>
+                </tr>
+            </thead>
+            <tbody id ="tcuerpo">
+                <!--TABLA AQUI-->
+            </tbody>
+            
+        </table>
+    </div>
+    
+</body>
+</html>
