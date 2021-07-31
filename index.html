@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/persona.js"></script>
-    <title>Recuperatorio Segundo Parcial - Lamas 3°C</title>
+    <title>Recuperatorio Segundo Parcial - Juan Pablo Lamas 3°C</title>
 </head>
 <body>
     <div id="mainDiv">
@@ -26,7 +26,7 @@
                 <input type="text" name="txtApellido" id="txtApellido" class="menuInput"><br><br>
                 
                 <label for="numEdad">Edad: </label>
-                <input type="number" name="numEdad" id="numEdad" class="menuInput"><br><br>
+                <input type="number" name="numEdad" id="numEdad" class="menuInput" value="1" min="1" max="199"><br><br>
                 
                 <label for="sexoSelect">Sexo: </label>
                 <select name="sexoSelect" id="sexoSelect" class="menuInput">
@@ -36,7 +36,7 @@
                 </select><br><br>
                 <input type="button" value="Agregar" class="btn" id="btnConfirmar" onclick="personas.agregar();">
                 <input type="button" value="Eliminar" class="btn" id="btnCancelar" onclick="personas.eliminarDeTabla();">
-                <input type="button" value="Limpiar LocalStorage" class="btn" id="btnErase" onclick="personas.rehacerTabla([]);">
+                <input type="button" value="Limpiar LocalStorage" class="btn" id="btnErase" onclick="personas.haltAndCatchFire();">
             </div>
         </div>
         <hr>
@@ -55,10 +55,10 @@
             </div>
             
             <div id="promedio">
-                Promedio de precios: <input type="text" id="txtPromedio" disabled><br>
+                Promedio de edades: <input type="text" id="txtPromedio" disabled><br>
             </div>
             <div id="promediobutton">
-                <input type="button" value="Calcular promedio" class="btn" id="btnPromedio" onclick="vehiculos.calcularPromedio();">
+                <input type="button" value="Calcular promedio" class="btn" id="btnPromedio" onclick="personas.calcularPromedio();">
             </div>
         </div>
         <hr>
@@ -93,7 +93,7 @@
                     <th>Sexo</th>
                 </tr>
             </thead>
-            <tbody id ="tcuerpo">
+            <tbody id ="tCuerpo">
                 <!--TABLA AQUI-->
             </tbody>
             
